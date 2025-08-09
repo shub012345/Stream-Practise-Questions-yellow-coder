@@ -1,0 +1,29 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+import java.util.*;
+import java.util.stream.*;
+
+import static java.util.stream.Collectors.*;
+public class Main
+{
+	public static void main(String[] args) {
+		List<Integer> list = Arrays.asList(1,2,3,4,5,6,7);
+
+    Map<Boolean,Integer> result =list.stream().collect(Collectors.partitioningBy(e->e%2==0,Collectors.summingInt(Integer::intValue)));
+    
+	 Integer a=   result.get(true);
+ Integer b=   result.get(false);
+	   
+		System.out.println("Sum of Even" , a);
+		System.out.println("Sum of Odd",b);
+		
+	}
+}
+
+
